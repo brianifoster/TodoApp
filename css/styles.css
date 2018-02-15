@@ -1,0 +1,23 @@
+body {
+  background-color: #fff;
+}
+
+/* Begin Header & Title Styles */
+.title-bkgd {
+  background-color: #800000;
+  width: 100%;
+  padding-bottom: 10px;
+}
+
+.app-title {
+  color: #fff;
+  text-align: center;
+}
+/* End Header & Title Styles */
+
+/* Begin Form Styles */
+.todoForm {
+  text-align: center;
+  margin-top: 50px;
+}
+/* End Form Styles */
