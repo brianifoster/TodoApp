@@ -12,9 +12,9 @@
 
 <!-- Begin Header & Title -->
   <div class="row">
-    <div class="container title-bkgd">
+    <div class="container-fluid title-bkgd">
       <div class="col-md-12">
-        <h1 class="app-title">2Do2Day</h1>
+        <h1 class="app-title">The Get-It-Done App</h1>
       </div>
     </div>
   </div>
@@ -23,9 +23,9 @@
 <!-- Begin Form -->
   <div class="container-fluid">
     <div class="row">
-      <div class="col-md-6 col-md-offset-3">
-        <form class="todoForm" action="" method="post">
-          To-Do Item: <input class="todo-input" type="text" />
+      <div class="col-md-12">
+        <form class="todoForm" action="" method="post" name="">
+          <input class="todo-input" type="text" size="100" placeholder="Type your to-do's here." /><br>
           <input class="submit" type="submit" />
         </form>
       </div>
@@ -37,9 +37,18 @@
   <div class="container-fluid">
     <div class="row">
       <div class="col-md-6   col-md-offset-3">
-        <ul class="todo-list">
+        <div class="col-md-6 left-list">
+          <h3 class="todo-header">Still To-Do's</h3>
+            <ul class="todo-list">
 
-        </ul>
+            </ul>
+        </div>
+        <div class="col-md-6 right-list">
+          <h3 class="todo-header">Done To-Do's</h3>
+            <ul class="todo-list">
+
+            </ul>
+        </div>
       </div>
     </div>
   </div>

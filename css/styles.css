@@ -18,6 +18,29 @@ body {
 /* Begin Form Styles */
 .todoForm {
   text-align: center;
-  margin-top: 50px;
+  margin-top: 25px;
 }
+.todo-input {
+  text-align: center;
+}
+.submit {
+  margin-top: 10px;
+}
+
 /* End Form Styles */
+
+/* Begin List Styles */
+.todo-header {
+  text-align: center;
+  margin: 25px 0px 0px 0px;
+}
+
+.todo-list {
+  border: 1px solid #800000;
+  height: 1%;
+  overflow: hidden;
+  list-style: none;
+  margin-top: 10px;
+  padding: 5px;
+}
+/* End List Styles */
