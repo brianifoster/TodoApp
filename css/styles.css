@@ -43,4 +43,8 @@ body {
   margin-top: 10px;
   padding: 5px;
 }
+
+button {
+  margin-left: 15px;
+}
 /* End List Styles */
