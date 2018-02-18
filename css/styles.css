@@ -22,6 +22,7 @@ body {
 }
 .todo-input {
   text-align: center;
+  border: 1px solid #800000;
 }
 .submit {
   margin-top: 10px;
@@ -41,7 +42,7 @@ body {
   overflow: hidden;
   list-style: none;
   margin-top: 10px;
-  padding: 5px;
+  padding: 10px 50px 15px 150px;
   text-align: left;
 }
 
@@ -59,5 +60,7 @@ h6,
 #delete-btn {
   font-size: 10px;
   margin-left: 10px;
+  background-color: #800000;
+  color: #fff;
 }
 /* End List Styles */
