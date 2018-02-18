@@ -13,8 +13,15 @@ var todos = [];
 
 function addTodo(e) {
   e.preventDefault();//stops it from actually submitting the information
-  let todoInput = document.querySelector('.todo-input').value;
-  let todoClear = document.querySelector('.todo-input').value = "";
+  var todoInput = document.querySelector('.todo-input').value;
+  var todoClear = document.querySelector('.todo-input').value = "";
+  var list = document.querySelector('ul');
+  var listItem = document.createElement('li');
+
   todos.push(todos);
+  listItem.innerHTML = todoInput;
+  list.appendChild(listItem);
   console.log(todoInput);
 }
+
+console.log(todos);
