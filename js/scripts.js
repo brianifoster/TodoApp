@@ -1,34 +1,33 @@
+//Function to have user add input and print it out with buttons
 var newTodoForm = document.forms.todoForm;
 newTodoForm.addEventListener("submit", function(e) {
   addTodo(e);
 });
 
-// submit.addEventListener('click', function() {
-//
-// })
-
-
-
 var todos = [];
 
 function addTodo(e) {
-  e.preventDefault();//stops it from actually submitting the information
+  e.preventDefault();
+  var ulStill = document.querySelector('.todo-list');
   var todoInput = document.querySelector('.todo-input').value;
   var todoClear = document.querySelector('.todo-input').value = "";
-  var list = document.querySelector('ul');
-  var listItem = document.createElement('li');
-  var button1 = document.createElement('button');
-  var button2 = document.createElement('button');
-  var button3 = document.createElement('button');
+  var li = document.createElement('li');
+  var h5Todo = document.createElement('h5');
+  h5Todo.className = 'header-four'
+  var checkbox = document.createElement('input');
+  checkbox.type = "checkbox";
+  checkbox.id = "checkbox";
+  checkbox.style.margin = "auto";
+  var deleteBtn = document.createElement('button');
+  deleteBtn.type = "button";
+  deleteBtn.id = "delete-btn";
 
-  todos.push(todos);
-  listItem.innerHTML = todoInput;
-  button1.innerHTML = "Done";
-  button2.innerHTML = "Edit";
-  button3.innerHTML = "Delete";
-  listItem.appendChild(button1);
-  listItem.appendChild(button2);
-  listItem.appendChild(button3);
-  list.appendChild(listItem);
+  todos.push(todoInput);
+  ulStill.appendChild(li);
+  li.appendChild(h5Todo);
+  li.appendChild(checkbox);
+  li.appendChild(deleteBtn);
+  h5Todo.innerHTML = todoInput;
+  deleteBtn.innerHTML = "Delete";
   console.log(todoInput);
 }
