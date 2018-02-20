@@ -57,7 +57,7 @@ body {
 }
 
 
-li label #labelStill {
+li span #spanStill {
   margin: 0px 10px 0px 50px;
 }
 
@@ -68,4 +68,7 @@ li label #labelStill {
   background-color: #800000;
   color: #fff;
 }
+
+
+
 /* End List Styles */

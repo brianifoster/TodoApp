@@ -15,8 +15,9 @@ function addTodo(e) {
   var todoClear = document.querySelector('.todo-input').value = "";
 
   var li = document.createElement('li');
-  var labelStill = document.createElement('label');
-  labelStill.setAttribute = ('id', 'labelStill');
+  var spanStill = document.createElement('span');
+  spanStill.setAttribute = ('id', 'spanStill');
+  spanStill.className = "span-still";
   var checkbox = document.createElement('input');
   checkbox.type = "checkbox";
   checkbox.id = "checkbox";
@@ -30,17 +31,33 @@ function addTodo(e) {
     ulStill.appendChild(li);
 }
 
-  stillTodos.push(todoInput);
+  stillTodos.push(li);
 
   li.appendChild(checkbox);
-  li.appendChild(labelStill);
+  li.appendChild(spanStill);
   li.appendChild(deleteBtn);
-  labelStill.innerHTML = todoInput;
+  spanStill.innerHTML = todoInput;
   deleteBtn.innerHTML = "Delete";
   console.log(todoInput);
+
+var deleteBtn = document.querySelectorAll("#delete-btn");
+var i;
+for (i = 0; i < stillTodos.length; i++) {
+  deleteBtn[i].addEventListener ('click', function() {
+  var clearLi = this.parentElement;
+  clearLi.style.display = "none";
+  });
 }
 
-// function boxChecked() {
-//   if(document.querySelector('#checkbox').checked = true)
-//
-// }
+var checkBox = document.querySelectorAll("#checkbox");
+var i;
+for (i = 0; i < stillTodos.length; i++) {
+  checkBox[i].addEventListener ('click', function() {
+  var clearLi = this.parentElement;
+  var ulDone = document.querySelector('.done-todo-list');
+  var liDone = document.createElement('li');
+  ulDone.appendChild(liDone);
+  liDone.innerHTML = liDone;
+  });
+}
+}
