@@ -42,7 +42,7 @@ body {
   overflow: hidden;
   list-style: none;
   margin-top: 10px;
-  padding: 10px 50px 15px 150px;
+  padding: 10px 10px 10px 10px;
   text-align: left;
 }
 
@@ -52,24 +52,19 @@ body {
   overflow: hidden;
   list-style: none;
   margin-top: 10px;
-  padding: 10px 50px 15px 150px;
+  padding: 10px 10px 10px 10px;
   text-align: left;
 }
 
-h4,
-.h4,
-h5,
-.h5,
-h6,
-.h6 {
-  margin-top: 5px;
-  margin-bottom: 5px;
-  margin-right: 20px;
+
+li label #labelStill {
+  margin: 0px 10px 0px 50px;
 }
 
 #delete-btn {
+  margin: 0px 0px 0px 0px;
+  float: right;
   font-size: 10px;
-  margin-left: 10px;
   background-color: #800000;
   color: #fff;
 }

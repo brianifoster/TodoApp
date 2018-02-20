@@ -15,28 +15,29 @@ function addTodo(e) {
   var todoInput = document.querySelector('.todo-input').value;
   var todoClear = document.querySelector('.todo-input').value = "";
 
-  if(todoInput.value == null) {
-    document.querySelector('.submit').disabled = true;
-  } else {
-    document.querySelector('.submit').disabled = false;
+  if(todoInput.length != "") {
+        document.querySelector('.submit').disabled = false;
+    } else {
+        document.querySelector('.submit').disabled = true;
+}
+
   var li = document.createElement('li');
-  var h5Still = document.createElement('h5');
-  h5Still.className = 'header-four'
+  var labelStill = document.createElement('label');
+  labelStill.setAttribute = ('id', 'labelStill');
   var checkbox = document.createElement('input');
   checkbox.type = "checkbox";
   checkbox.id = "checkbox";
-  checkbox.style.margin = "auto";
+  checkbox.style.marginRight = "10px";
   var deleteBtn = document.createElement('button');
   deleteBtn.type = "button";
   deleteBtn.id = "delete-btn";
 
   stillTodos.push(todoInput);
   ulStill.appendChild(li);
-  li.appendChild(h5Still);
   li.appendChild(checkbox);
+  li.appendChild(labelStill);
   li.appendChild(deleteBtn);
-  h5Still.innerHTML = todoInput;
+  labelStill.innerHTML = todoInput;
   deleteBtn.innerHTML = "Delete";
   console.log(todoInput);
-  }
 }
