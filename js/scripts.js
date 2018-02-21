@@ -40,6 +40,7 @@ function addTodo(e) {
   deleteBtn.innerHTML = "Delete";
   console.log(todoInput);
 
+// Makes the delete button "delete" from Todo list
 var deleteBtn = document.querySelectorAll("#delete-btn");
 var i;
 for (i = 0; i < stillTodos.length; i++) {
@@ -48,16 +49,20 @@ for (i = 0; i < stillTodos.length; i++) {
   clearLi.style.display = "none";
   });
 }
-
+// Makes the checkbox button move input to Done Todo List
 var checkBox = document.querySelectorAll("#checkbox");
 var i;
 for (i = 0; i < stillTodos.length; i++) {
   checkBox[i].addEventListener ('click', function() {
-  var clearLi = this.parentElement;
+  var clearLi = this.parentNode;
   var ulDone = document.querySelector('.done-todo-list');
-  var liDone = document.createElement('li');
-  ulDone.appendChild(liDone);
-  liDone.innerHTML = liDone;
+  console.log(clearLi);
+  ulDone.appendChild(clearLi);
+  clearLi.setAttribute('id', 'doneItem');
+  var doneBox = document.querySelector("#doneItem > #checkbox");
+  if (doneBox.parentNode) {
+  doneBox.parentNode.removeChild(doneBox);
+}
   });
 }
 }
