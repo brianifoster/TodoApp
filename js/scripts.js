@@ -94,11 +94,7 @@ for (var i = 0; i < editTodos.length; i++) {
     newDelete.type = "button";
     newDelete.id = "delete-btn";
 
-    if (newInput === '') {
-      alert("You must write something!");
-    } else {
       newUl.appendChild(newLi);
-    }
 
     spanTodos.unshift(newSpan);
     boxTodos.unshift(newBox);
