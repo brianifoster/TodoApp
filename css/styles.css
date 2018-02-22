@@ -61,6 +61,14 @@ li span #spanStill {
   margin: 0px 10px 0px 50px;
 }
 
+#edit-btn {
+  margin: 0px 0px 0px 0px;
+  float: right;
+  font-size: 10px;
+  background-color: green;
+  color: #fff;
+}
+
 #delete-btn {
   margin: 0px 0px 0px 0px;
   float: right;

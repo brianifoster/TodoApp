@@ -22,6 +22,9 @@ function addTodo(e) {
   checkbox.type = "checkbox";
   checkbox.id = "checkbox";
   checkbox.style.marginRight = "10px";
+  var editBtn = document.createElement('button');
+  editBtn.type = "button";
+  editBtn.id = "edit-btn";
   var deleteBtn = document.createElement('button');
   deleteBtn.type = "button";
   deleteBtn.id = "delete-btn";
@@ -35,10 +38,14 @@ function addTodo(e) {
 
   li.appendChild(checkbox);
   li.appendChild(spanStill);
+  li.appendChild(editBtn);
   li.appendChild(deleteBtn);
   spanStill.innerHTML = todoInput;
+  editBtn.innerHTML = "Edit";
   deleteBtn.innerHTML = "Delete";
   console.log(todoInput);
+
+
 
 // Makes the delete button "delete" from Todo list
 var deleteBtn = document.querySelectorAll("#delete-btn");
@@ -58,11 +65,20 @@ for (i = 0; i < stillTodos.length; i++) {
   var ulDone = document.querySelector('.done-todo-list');
   console.log(clearLi);
   ulDone.appendChild(clearLi);
+  clearLi.style.textDecorationLine = "line-through";
+  clearLi.style.color = "lightGrey";
+
+  //Removes checkbox
   clearLi.setAttribute('id', 'doneItem');
   var doneBox = document.querySelector("#doneItem > #checkbox");
   if (doneBox.parentNode) {
   doneBox.parentNode.removeChild(doneBox);
 }
+
+  var doneEdit = document.querySelector("#doneItem > #edit-btn");
+  if (doneEdit.parentNode) {
+    doneEdit.parentNode.removeChild(doneEdit);
+  }
   });
 }
 }
