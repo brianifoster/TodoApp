@@ -14,11 +14,11 @@ var deleteTodos = [];
 // This adds input from the user into a ul
 function addTodo(e) {
   e.preventDefault();
-  var ulStill = document.querySelector('.still-todo-list');
+  let ulStill = document.querySelector('.still-todo-list');
   var todoInput = document.querySelector('.todo-input').value;
   var todoClear = document.querySelector('.todo-input').value = "";
 
-  var li = document.createElement('li');
+  let li = document.createElement('li');
   var spanStill = document.createElement('span');
   spanStill.setAttribute = ('id', 'spanStill');
   spanStill.className = "span-still";
@@ -58,56 +58,56 @@ var editBtn = document.querySelectorAll("#edit-btn");
 
 for (var i = 0; i < editTodos.length; i++) {
   editBtn[i].addEventListener('click', function() {
-    var removeLi = this.parentNode;
-    removeLi.style.display = "none";
+    var clearLi = this.parentNode;
+    clearLi.style.display = "none";
     // var editLi = document.querySelector('li').childNodes;
     // var editValue = console.log(editLi[1]);
-    var editInput = document.querySelector('.edit-input');
+    let editInput = document.querySelector('.edit-input');
     // editInput.placeholder = editValue;
     editInput.placeholder = "Edit your to-do item.";
     editInput.style.borderStyle = "solid";
     editInput.style.borderWidth = "thin";
     editInput.style.borderColor = "#800000";
   });
-  var editTodoForm = document.forms.editForm;
+  let editTodoForm = document.forms.editForm;
 
   editTodoForm.addEventListener("submit", function(e) {
     newInputTodo(e);
   });
   function newInputTodo(e) {
     e.preventDefault();
-    var newUl = document.querySelector('.still-todo-list');
-    var newInput = document.querySelector('.edit-input').value;
-    var newClear = document.querySelector('.edit-input').value = "";
-    var newLi = document.createElement('li');
-    var newSpan = document.createElement('span');
-    newSpan.setAttribute = ('id', 'newSpan');
-    newSpan.className = "newSpan";
-    var newBox = document.createElement('input');
-    newBox.type = "checkbox";
-    newBox.id = "newbox";
-    newBox.style.marginRight = "10px";
-    var newEdit = document.createElement('button');
-    newEdit.type = "button";
-    newEdit.id = "newEdit";
-    var newDelete = document.createElement('button');
-    newDelete.type = "button";
-    newDelete.id = "delete-btn";
+    let ulStill = document.querySelector('.still-todo-list');
+    let todoInput = document.querySelector('.edit-input').value;
+    let todoClear = document.querySelector('.edit-input').value = "";
+    let li = document.createElement('li');
+    let spanStill = document.createElement('span');
+    spanStill.setAttribute = ('id', 'newSpan');
+    spanStill.className = "newSpan";
+    let newBox = document.createElement('input');
+    checkbox.type = "checkbox";
+    checkbox.id = "newbox";
+    checkbox.style.marginRight = "10px";
+    let newEdit = document.createElement('button');
+    editBtn.type = "button";
+    editBtn.id = "newEdit";
+    let deleteBtn = document.createElement('button');
+    deleteBtn.type = "button";
+    deleteBtn.id = "delete-btn";
 
-      newUl.appendChild(newLi);
+      ulStill.appendChild(li);
 
-    spanTodos.unshift(newSpan);
-    boxTodos.unshift(newBox);
-    editTodos.unshift(newEdit);
-    deleteTodos.unshift(newDelete);
+    spanTodos.push(spanStill);
+    boxTodos.push(checkbox);
+    editTodos.push(editBtn);
+    deleteTodos.push(deleteBtn);
 
-    newLi.appendChild(newBox);
-    newLi.appendChild(newSpan);
-    newLi.appendChild(newEdit);
-    newLi.appendChild(newDelete);
-    newSpan.innerHTML = newInput;
-    newEdit.innerHTML = "Edit";
-    newDelete.innerHTML = "Delete";
+    li.appendChild(checkbox);
+    li.appendChild(spanStill);
+    li.appendChild(editBtn);
+    li.appendChild(deleteBtn);
+    spanStill.innerHTML = newInput;
+    editBtn.innerHTML = "Edit";
+    deleteBtn.innerHTML = "Delete";
   }
 }
 
@@ -125,8 +125,8 @@ for (var i = 0; i < deleteTodos.length; i++) {
 var checkBox = document.querySelectorAll("#checkbox");
 for (var i = 0; i < boxTodos.length; i++) {
   checkBox[i].addEventListener ('click', function() {
-  var clearLi = this.parentNode;
-  var ulDone = document.querySelector('.done-todo-list');
+  let clearLi = this.parentNode;
+  let ulDone = document.querySelector('.done-todo-list');
   console.log(clearLi);
   ulDone.appendChild(clearLi);
   clearLi.style.textDecorationLine = "line-through";
