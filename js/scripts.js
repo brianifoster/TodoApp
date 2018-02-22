@@ -5,7 +5,11 @@ newTodoForm.addEventListener("submit", function(e) {
   addTodo(e);
 });
 // This adds a delete button and a checkbox to each list item
-var stillTodos = [];
+var spanTodos = [];
+var boxTodos = [];
+var editTodos = [];
+var deleteTodos = [];
+
 
 // This adds input from the user into a ul
 function addTodo(e) {
@@ -34,7 +38,10 @@ function addTodo(e) {
     ulStill.appendChild(li);
 }
 
-  stillTodos.push(li);
+  spanTodos.push(spanStill);
+  boxTodos.push(checkbox);
+  editTodos.push(editBtn);
+  deleteTodos.push(deleteBtn);
 
   li.appendChild(checkbox);
   li.appendChild(spanStill);
@@ -45,12 +52,74 @@ function addTodo(e) {
   deleteBtn.innerHTML = "Delete";
   console.log(todoInput);
 
+//Makes the edit button Function
+var ulEdit = document.querySelector('.still-todo-list');
+var editBtn = document.querySelectorAll("#edit-btn");
+
+for (var i = 0; i < editTodos.length; i++) {
+  editBtn[i].addEventListener('click', function() {
+    var removeLi = this.parentNode;
+    removeLi.style.display = "none";
+    // var editLi = document.querySelector('li').childNodes;
+    // var editValue = console.log(editLi[1]);
+    var editInput = document.querySelector('.edit-input');
+    // editInput.placeholder = editValue;
+    editInput.placeholder = "Edit your to-do item.";
+    editInput.style.borderStyle = "solid";
+    editInput.style.borderWidth = "thin";
+    editInput.style.borderColor = "#800000";
+  });
+  var editTodoForm = document.forms.editForm;
+
+  editTodoForm.addEventListener("submit", function(e) {
+    newInputTodo(e);
+  });
+  function newInputTodo(e) {
+    e.preventDefault();
+    var newUl = document.querySelector('.still-todo-list');
+    var newInput = document.querySelector('.edit-input').value;
+    var newClear = document.querySelector('.edit-input').value = "";
+    var newLi = document.createElement('li');
+    var newSpan = document.createElement('span');
+    newSpan.setAttribute = ('id', 'newSpan');
+    newSpan.className = "newSpan";
+    var newBox = document.createElement('input');
+    newBox.type = "checkbox";
+    newBox.id = "newbox";
+    newBox.style.marginRight = "10px";
+    var newEdit = document.createElement('button');
+    newEdit.type = "button";
+    newEdit.id = "newEdit";
+    var newDelete = document.createElement('button');
+    newDelete.type = "button";
+    newDelete.id = "delete-btn";
+
+    if (newInput === '') {
+      alert("You must write something!");
+    } else {
+      newUl.appendChild(newLi);
+    }
+
+    spanTodos.unshift(newSpan);
+    boxTodos.unshift(newBox);
+    editTodos.unshift(newEdit);
+    deleteTodos.unshift(newDelete);
+
+    newLi.appendChild(newBox);
+    newLi.appendChild(newSpan);
+    newLi.appendChild(newEdit);
+    newLi.appendChild(newDelete);
+    newSpan.innerHTML = newInput;
+    newEdit.innerHTML = "Edit";
+    newDelete.innerHTML = "Delete";
+  }
+}
+
 
 
 // Makes the delete button "delete" from Todo list
 var deleteBtn = document.querySelectorAll("#delete-btn");
-var i;
-for (i = 0; i < stillTodos.length; i++) {
+for (var i = 0; i < deleteTodos.length; i++) {
   deleteBtn[i].addEventListener ('click', function() {
   var clearLi = this.parentElement;
   clearLi.style.display = "none";
@@ -58,8 +127,7 @@ for (i = 0; i < stillTodos.length; i++) {
 }
 // Makes the checkbox button move input to Done Todo List
 var checkBox = document.querySelectorAll("#checkbox");
-var i;
-for (i = 0; i < stillTodos.length; i++) {
+for (var i = 0; i < boxTodos.length; i++) {
   checkBox[i].addEventListener ('click', function() {
   var clearLi = this.parentNode;
   var ulDone = document.querySelector('.done-todo-list');
@@ -74,7 +142,7 @@ for (i = 0; i < stillTodos.length; i++) {
   if (doneBox.parentNode) {
   doneBox.parentNode.removeChild(doneBox);
 }
-
+//Removes Edit button over on Done Todo list
   var doneEdit = document.querySelector("#doneItem > #edit-btn");
   if (doneEdit.parentNode) {
     doneEdit.parentNode.removeChild(doneEdit);
