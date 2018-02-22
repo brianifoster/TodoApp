@@ -3,14 +3,22 @@ body {
 }
 
 /* Begin Header & Title Styles */
-.title-bkgd {
-  background-color: #800000;
+.img-bkgd {
+  background-color: #fff;
   width: 100%;
-  padding-bottom: 10px;
+  padding: 0px;
+  margin-bottom: 20px;
 }
 
-.app-title {
-  color: #fff;
+.hanaiLogo {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100px;
+}
+
+.title {
+  color: #800000;
   text-align: center;
 }
 /* End Header & Title Styles */
@@ -104,5 +112,20 @@ li span #newSpan {
 .edit {
   display: none;
 }
-
 /* End Add Form Styles */
+
+/* Start Footer Styles */
+.footer-bkgd {
+  background-color: #800000;
+  width: 100%;
+  padding: 15px 0px 5px 0px;
+  margin-top: 20px;
+}
+
+.copy {
+  color: #fff;
+  font-size: 15px;
+  letter-spacing: 3px;
+  text-align: center;
+}
+/* End Footer Styles */
