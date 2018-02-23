@@ -62,14 +62,14 @@ for (var i = 0; i < editTodos.length; i++) {
     clearLi.style.display = "none";
     // var editLi = document.querySelector('li').childNodes;
     // var editValue = console.log(editLi[1]);
-    let editInput = document.querySelector('.edit-input');
+    var editInput = document.querySelector('.edit-input');
     // editInput.placeholder = editValue;
     editInput.placeholder = "Edit your to-do item.";
     editInput.style.borderStyle = "solid";
     editInput.style.borderWidth = "thin";
     editInput.style.borderColor = "#800000";
   });
-  let editTodoForm = document.forms.editForm;
+  var editTodoForm = document.forms.editForm;
 
   editTodoForm.addEventListener("submit", function(e) {
     newInputTodo(e);
@@ -100,6 +100,7 @@ for (var i = 0; i < editTodos.length; i++) {
     boxTodos.push(checkbox);
     editTodos.push(editBtn);
     deleteTodos.push(deleteBtn);
+    console.log(editBtn);
 
     li.appendChild(checkbox);
     li.appendChild(spanStill);
@@ -117,7 +118,8 @@ for (var i = 0; i < editTodos.length; i++) {
 var deleteBtn = document.querySelectorAll("#delete-btn");
 for (var i = 0; i < deleteTodos.length; i++) {
   deleteBtn[i].addEventListener ('click', function() {
-  var clearLi = this.parentElement;
+  var clearLi = this.parentNode;
+  // clearLi.parentNode.removeChild(deleteBtn);
   clearLi.style.display = "none";
   });
 }
@@ -125,7 +127,7 @@ for (var i = 0; i < deleteTodos.length; i++) {
 var checkBox = document.querySelectorAll("#checkbox");
 for (var i = 0; i < boxTodos.length; i++) {
   checkBox[i].addEventListener ('click', function() {
-  let clearLi = this.parentNode;
+  var clearLi = this.parentNode;
   let ulDone = document.querySelector('.done-todo-list');
   console.log(clearLi);
   ulDone.appendChild(clearLi);
